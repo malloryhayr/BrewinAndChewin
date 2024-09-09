@@ -217,7 +217,7 @@ public class KegBlockEntity extends SyncedBlockEntity implements MenuProvider, N
                 }
             }
         }
-        int cold = states.stream().filter(s -> s.is(BlockTags.BIRCH_LOGS)).mapToInt(s -> 1).sum();
+        int cold = states.stream().filter(s -> s.is(BlockTags.create(new ResourceLocation(BrewinAndChewin.MODID, "cold_blocks")))).mapToInt(s -> 1).sum();
         float temperature = level.getBiome(worldPosition).get().getBaseTemperature();
         if (temperature <= 0) {
             cold += 2;
