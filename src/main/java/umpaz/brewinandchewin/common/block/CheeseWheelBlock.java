@@ -73,7 +73,7 @@ public class CheeseWheelBlock extends Block {
         if (servings > 0) {
             if (heldStack.is(ModTags.KNIVES)) {
                 level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
-                popResource(level, pos, new ItemStack(cheeseType.get(), 2));
+                popResource(level, pos, new ItemStack(cheeseType.get(), 1));
                 level.setBlock(pos, state.setValue(SERVINGS, servings - 1), 3);
             } else {
                 player.displayClientMessage(BCTextUtils.getTranslation("block.cheese.use_knife"), true);
@@ -82,7 +82,7 @@ public class CheeseWheelBlock extends Block {
         if (servings == 0) {
             if (heldStack.is(ModTags.KNIVES)) {
                 level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
-                popResource(level, pos, new ItemStack(cheeseType.get(), 2));
+                popResource(level, pos, new ItemStack(cheeseType.get(), 1));
                 level.destroyBlock(pos, false);
             } else {
                 player.displayClientMessage(BCTextUtils.getTranslation("block.cheese.use_knife"), true);
